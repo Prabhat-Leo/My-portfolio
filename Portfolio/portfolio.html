@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sex.css">
+<title>Portfolio</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="design.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="profile.jpg" href="icon.jpg">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const words = [
+    "Web Developer",
+    "Data Science Enthusiast",
+    "Problem Solver",
+    "Creative Coder"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typing = document.getElementById("typing");
+
+  function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      typing.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000); // pause before deleting
+        return;
+      }
+
+    } else {
+      typing.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+  }
+
+  typeEffect();
+
+});
+</script>
+<body>
+
+<header>
+    <div class="logo">Portfolio</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        
+        <h2 class="intro">Hey, It's Me</h2>
+        <h1 class="hero-name">Prabhat Sharma</h1>
+        <h3>And I'm a <span id="typing"></span></h3>
+        <p>BCA Data Science Student | Python • SQL • Data Analytics Learner | Building Real-World Project.</p>
+        <div class="social-icons">
+            <a href="https://github.com/Prabhat-Leo"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Aryans__di"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/aryans__di/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/prabhat-sharma-0b1347359/" ><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <a href="Selfresume.html" target="_blank" class="btn">Download CV</a>
+    </div>
+
+    <div class="hero-img">
+       
+        <img src="profile.webp" alt="profile">
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h1>About Me</h1>
+    <p>I am a passionate BCA Data Science student with a strong interest in data analysis, machine learning, and<br>
+         problem-solving. I enjoy working with data to uncover meaningful insights and build predictive models.<br>
+         I have knowledge of Python, statistics, SQL, and data visualization tools. I am continuously improving my<br>
+         analytical and programming skills to solve real-world problems using data.<br>
+         My goal is to become a skilled Data Scientist and contribute to data-driven decision-making in<br>
+        organizations.
+    </p>
+</section>
+
+<section id="projects" class="projects">
+    <h1>My Projects</h1>
+    <div class="cards">
+        <div class="card">
+            <h3>E-Commerce Website</h3>
+            <p>Shopping website using HTML & CSS.</p>
+        </div>
+
+        <div class="card">
+            <h3>Student Resume</h3>
+            <p>Modern resume website design.</p>
+        </div>
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Personal branding website.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="about">
+    <h1>Contact Me:</h1>
+    <p>Email:<a href="mailto:itsaryans.dy@gmail.com">itsaryans.dy@gmail.com</a></p>
+</section>
+
+<footer>
+    <p>© 2026 Prabhat | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
