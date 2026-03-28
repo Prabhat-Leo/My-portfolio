@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<title>Portfolio</title>
+
+ /*This js code shows the typing effect on the webpage. It cycles through an array of words, typing and deleting each word in sequence. 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const words = [
+    "Web Developer",
+    "Data Science Enthusiast",
+    "Problem Solver",
+    "Creative Coder"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typing = document.getElementById("typing");
+
+  function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      typing.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000); // pause before deleting
+        return;
+      }
+
+    } else {
+      typing.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+  }
+
+  typeEffect();
+
+});
+</script>
+<body>
+<section>
+   <h3>And I'm a <span id="typing"></span></h3>
+</section>
+</body>
+
+</html>
