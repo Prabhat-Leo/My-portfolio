@@ -1,0 +1,35 @@
+body{
+  background:#0f172a;
+  overflow:hidden;
+}
+
+.blob{
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:#4f46e5;
+  border-radius:50%;
+  filter: blur(120px);
+  animation: move 15s infinite alternate;
+}
+
+.blob2{
+  background:#06b6d4;
+  left:60%;
+  animation-duration:20s;
+}
+
+.blob3{
+  background:#ec4899;
+  top:50%;
+  animation-duration:25s;
+}
+
+@keyframes move{
+  from{
+    transform:translate(-100px,-100px);
+  }
+  to{
+    transform:translate(200px,200px);
+  }
+}
